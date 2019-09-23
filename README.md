@@ -1,6 +1,6 @@
 # AWS Auto Website Deployment
 
-Serves as a demo for Matt Carlton's ["Deploying Services to AWS Without Leaving the Comfort of your Desktop" talk] (https://github.com/IndyAWS/IndyAWS-Presentations/tree/master/2019/05%20-%20May%20-%20Matt%20Carlton%20-%20Deploying%20Services%20to%20AWS%20Without%20Leaving%20The%20Comfort%20Of%20Your%20Desktop).
+Serves as a demo for Matt Carlton's ["Deploying Services to AWS Without Leaving the Comfort of your Desktop" talk](https://github.com/IndyAWS/IndyAWS-Presentations/tree/master/2019/05%20-%20May%20-%20Matt%20Carlton%20-%20Deploying%20Services%20to%20AWS%20Without%20Leaving%20The%20Comfort%20Of%20Your%20Desktop).
 
 - Terraform will deploy a VPC, a salt master, and a ec2 instance to be used for a static website.
 - Saltstack will configure the servers and deploy the static website
