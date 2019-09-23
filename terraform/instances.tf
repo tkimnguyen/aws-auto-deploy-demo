@@ -4,7 +4,7 @@ resource "aws_instance" "salt_master" {
   key_name = "cloud-conf-demo"
   ami = "ami-0a313d6098716f372"
   iam_instance_profile = "${aws_iam_instance_profile.read_ec2_tags.id}"
-  associate_public_ip_address = "True"
+  associate_public_ip_address = true
   availability_zone = "${var.region}a"
   subnet_id = "${aws_subnet.servers.id}"
   user_data = "${file("templates/master-userdata.tmpl")}"
@@ -12,10 +12,10 @@ resource "aws_instance" "salt_master" {
     "${aws_security_group.salt-acl.id}",
     "${aws_security_group.ssh-acl.id}"
   ]
-  root_block_device = {
+  root_block_device {
     volume_size = 20
   }
-  tags {
+  tags = {
     Name = "salt-master"
     Managed = "terraform"
   }
@@ -36,10 +36,10 @@ resource "aws_instance" "demo_servers" {
     "${aws_security_group.ssh-acl.id}"
   ]
   # Pull disk size from variables file
-  root_block_device = {
+  root_block_device {
     volume_size = "${lookup(var.data_disk_size, element(var.vm_names, count.index), 100)}"
   }
-  tags {
+  tags = {
     Name = "${element(var.vm_names, count.index)}"
     Managed = "terraform"
     Roles = "${lookup(var.role, element(var.vm_names, count.index))}"

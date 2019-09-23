@@ -3,6 +3,9 @@
 # Bootstrap the various app servers
 ##############################
 
+# avoid being prompted
+export DEBIAN_FRONTEND=noninteractive
+
 # Install required packages
 apt update
 apt install -y wget python python-boto

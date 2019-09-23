@@ -4,6 +4,9 @@
 # Bootstrap the salt master
 ##############################
 
+# avoid being prompted
+export DEBIAN_FRONTEND=noninteractive
+
 # Make sure required packages are available
 apt update
 apt install -y git wget python-boto

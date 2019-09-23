@@ -3,9 +3,9 @@
 
 Vagrant.configure("2") do |config|
   # Ubuntu 16.04
-  server_os = "ubuntu/xenial64"
+  #server_os = "ubuntu/xenial64"
   # Ubuntu 18.04
-  #server_os = "ubuntu/bionic64"
+  server_os = "ubuntu/bionic64"
   # FreeBSD 11.2
   #server_os = "bento/freebsd-11.2"
 
@@ -38,7 +38,8 @@ Vagrant.configure("2") do |config|
       salt.grains_config = "saltminion/grains.yml"
 
       # Don't run the highstate on the server
-      salt.run_highstate = false
+#      salt.run_highstate = false
+      salt.run_highstate = true
     end
   end
 
