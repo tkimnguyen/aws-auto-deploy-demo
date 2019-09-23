@@ -33,7 +33,7 @@ Open a browser and navigate to that IP address, e.g. if you see
 
 you should be able to browse to `http://34.239.125.159` and see a web page like this:
 
-.. image:: https://raw.githubusercontent.com/tkimnguyen/aws-auto-deploy-demo/master/Screen%20Shot%202019-09-23%20at%203.29.00%20PM.png
+![Static website screenshot](https://raw.githubusercontent.com/tkimnguyen/aws-auto-deploy-demo/master/Screen%20Shot%202019-09-23%20at%203.29.00%20PM.png)
 
 You should also be able to `ssh ubuntu@34.239.125.159`. If you see an ssh authenticity warning, e.g.
 
