@@ -1,6 +1,6 @@
 # AWS Auto Website Deployment
 
-Serves as a demo for Matt Carlton's `"Deploying Services to AWS Without Leaving the Comfort of your Desktop" talk <https://github.com/IndyAWS/IndyAWS-Presentations/tree/master/2019/05%20-%20May%20-%20Matt%20Carlton%20-%20Deploying%20Services%20to%20AWS%20Without%20Leaving%20The%20Comfort%20Of%20Your%20Desktop>`_.
+Serves as a demo for Matt Carlton's ["Deploying Services to AWS Without Leaving the Comfort of your Desktop" talk](https://github.com/IndyAWS/IndyAWS-Presentations/tree/master/2019/05%20-%20May%20-%20Matt%20Carlton%20-%20Deploying%20Services%20to%20AWS%20Without%20Leaving%20The%20Comfort%20Of%20Your%20Desktop).
 
 - Terraform will deploy a VPC, a salt master, and a ec2 instance to be used for a static website.
 - Saltstack will configure the servers and deploy the static website
@@ -9,8 +9,8 @@ Serves as a demo for Matt Carlton's `"Deploying Services to AWS Without Leaving 
 - enhanced to deploy a Plone site
 
 To try this with Vagrant:
-- Install `VirtualBox <https://www.virtualbox.org/>`_
-- Install `Vagrant <https://www.vagrantup.com>`_
+- Install [VirtualBox](https://www.virtualbox.org)
+- Install [Vagrant](https://www.vagrantup.com)
 - `cd saltstack`
 - `vagrant up`
 
@@ -19,7 +19,7 @@ To try this with Amazon AWS:
 - Create an AWS account
 - Create an AWS user, e.g. `Administrator`
 - Create an AWS group, e.g. `Administrators`
-- Create a new key pair for that user called `cloud-conf-demo`
+- [Create a new key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws) called `cloud-conf-demo` for that user 
 - Import your ssh public key into the new key pair
 - `cd terraform`
 - `terraform init`
