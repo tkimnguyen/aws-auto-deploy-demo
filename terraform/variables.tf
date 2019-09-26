@@ -7,8 +7,8 @@ variable "region" {
 # List of all VMs to be managed, human readable
 variable "vm_names" {
   default = [
-    "static-site",
-#    "plone-app01"
+#    "static-site",
+    "plone-app01"
   ]
 }
 
@@ -24,7 +24,8 @@ variable "data_disk_size" {
 variable "instance_size" {
   type = "map"
   default = {
-    plone-app01 = "t3.medium"
+#    plone-app01 = "t3.medium"
+    plone-app01 = "t3.small"
   }
 }
 
