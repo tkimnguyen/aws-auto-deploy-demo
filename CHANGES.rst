@@ -1,3 +1,9 @@
+2019-09-30
+==========
+
+- add libffi to Plone dependencies
+  [tkimnguyen]
+
 2019-09-26
 ==========
 

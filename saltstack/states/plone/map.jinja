@@ -5,6 +5,7 @@
             'png': 'png',
             'jpeg': 'jpeg',
             'tiff': 'tiff',
+            'ffi': 'ffi',
         }
     },
     'RedHat': {
@@ -13,6 +14,7 @@
             'png': 'libpng-devel',
             'jpeg': 'libjpeg-turbo-devel',
             'tiff': 'libtiff-devel',
+            'ffi': 'libffi-devel',
         }
     },
     'Debian': {
@@ -21,6 +23,7 @@
             'png': 'libpng-dev',
             'jpeg': 'libjpeg8-dev',
             'tiff': 'libtiff5-dev',
+            'ffi': 'libffi-dev',
         }
     },
     'FreeBSD': {
@@ -29,6 +32,7 @@
             'png': 'png',
             'jpeg': 'openjpeg15',
             'tiff': 'tiff',
+            'ffi': 'ffi', # could be wrong package name
         }
     },
 }, merge=salt['pillar.get']('plone:lookup')) %}
