@@ -1,6 +1,9 @@
 2019-09-30
 ==========
 
+- tweak supervisor config
+  [tkimnguyen]
+
 - add libffi to Plone dependencies
   [tkimnguyen]
 
