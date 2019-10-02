@@ -38,4 +38,4 @@ plone-log-file:
     - user: zope
     - group: zope
     - require:
-      - git: plone-buildout-repo
+      - plone-buildout

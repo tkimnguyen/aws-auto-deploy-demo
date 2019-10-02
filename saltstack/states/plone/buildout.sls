@@ -16,11 +16,11 @@ supervisorctl-reread:
     - name: /usr/bin/supervisorctl reread
     - runas: root
     - require:
-        - file: plone-buildout
+        - plone-buildout
 
 supervisorctl-update:
   cmd.run:
     - name: /usr/bin/supervisorctl update
     - runas: root
     - require:
-        - file: supervisorctl-reread
+        - supervisorctl-reread
