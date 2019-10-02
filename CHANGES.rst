@@ -1,3 +1,11 @@
+2019-10-02
+==========
+
+- add commands to create instance.log with correct ownership,
+  reread and update supervisor config
+  [tkimnguyen]
+
+
 2019-09-30
 ==========
 

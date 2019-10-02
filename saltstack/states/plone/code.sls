@@ -31,3 +31,11 @@ buildout-config:
     - require:
       - sls: base
       - git: plone-buildout-repo
+
+plone-log-file:
+  file.managed:
+    - name: {{ project_dir }}/var/log/instance.log
+    - user: zope
+    - group: zope
+    - require:
+      - git: plone-buildout-repo
