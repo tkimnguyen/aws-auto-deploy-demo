@@ -5,6 +5,8 @@
   reread and update supervisor config
   [tkimnguyen]
 
+- use Plone 5.2 on Python 3
+  [tkimnguyen]
 
 2019-09-30
 ==========

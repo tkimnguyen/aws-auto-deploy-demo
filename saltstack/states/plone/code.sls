@@ -26,7 +26,7 @@ buildout-config:
 
 {{ project_dir }}/env:
   virtualenv.managed:
-    - python: python2.7
+    - python: python3
     - requirements: {{ project_dir }}/requirements.txt
     - require:
       - sls: base

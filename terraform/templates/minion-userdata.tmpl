@@ -8,7 +8,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Install required packages
 apt update
-apt install -y wget python python-boto
+apt install -y wget python python-boto python3-dev
 
 # Create salt config directory
 mkdir -p /etc/salt/minion.d
