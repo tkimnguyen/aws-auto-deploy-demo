@@ -11,12 +11,20 @@ plone-buildout:
     - require:
       - file: buildout-config
 
+plone-buildout2:
+  cmd.run:
+    - name: {{ project_dir }}/env/bin/buildout
+    - cwd: {{ project_dir }}
+    - runas: zope
+    - require:
+      - plone-buildout
+
 supervisorctl-reread:
   cmd.run:
     - name: /usr/bin/supervisorctl reread
     - runas: root
     - require:
-        - plone-buildout
+        - plone-buildout2
 
 supervisorctl-update:
   cmd.run:
