@@ -16,6 +16,14 @@ plone-buildout-repo:
       - user: zope-user
       - file: {{ project_dir }}
 
+plone-buildout-repo-daterecurringindex:
+  cmd.run:
+    - name: git pull origin daterecurringindex
+    - cwd: {{ project_dir }}
+    - runas: zope
+    - require:
+      - git: plone-buildout-repo
+
 buildout-config:
   file.copy:
     - name: {{ project_dir }}/buildout.cfg
@@ -23,7 +31,7 @@ buildout-config:
     - user: zope
     - group: zope
     - require:
-      - git: plone-buildout-repo
+      - plone-buildout-repo-daterecurringindex
 
 {{ project_dir }}/env:
   virtualenv.managed:
