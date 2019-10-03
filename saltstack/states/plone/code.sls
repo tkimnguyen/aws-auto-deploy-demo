@@ -9,6 +9,7 @@ include:
 plone-buildout-repo:
   git.latest:
     - name: {{ repo }}
+    - branch: daterecurringindex
     - user: zope
     - target: {{ project_dir }}
     - require:
