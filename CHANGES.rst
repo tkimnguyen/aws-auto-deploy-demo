@@ -1,3 +1,9 @@
+2020-05-18
+==========
+
+- tweaks for Terraform 0.12 deprecation of quoted strings
+  [tkimnguyen]
+
 2019-10-22
 ==========
 
