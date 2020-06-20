@@ -41,12 +41,12 @@ EOF
 resource "aws_iam_policy_attachment" "ec2-tags-attach" {
   name       = "ec2-tags-attach"
   roles      = ["${aws_iam_role.read_ec2_tags.name}"]
-  policy_arn = "${aws_iam_policy.ec2_tags_policy.arn}"
+  policy_arn = aws_iam_policy.ec2_tags_policy.arn
 }
 
 # Allow the roles to be assigned to an EC2 instance
 resource "aws_iam_instance_profile" "read_ec2_tags" {
   name = "read_ec2_tags"
-  role = "${aws_iam_role.read_ec2_tags.name}"
+  role = aws_iam_role.read_ec2_tags.name
 }
 

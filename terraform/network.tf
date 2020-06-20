@@ -10,7 +10,7 @@ resource "aws_vpc" "demo-vpc" {
 
 # Create a subnet for servers to live in
 resource "aws_subnet" "servers" {
-  vpc_id = "${aws_vpc.demo-vpc.id}"
+  vpc_id = aws_vpc.demo-vpc.id
   cidr_block = "10.0.1.0/24"
   map_public_ip_on_launch = "true"
   availability_zone = "${var.region}a"
@@ -21,15 +21,15 @@ resource "aws_subnet" "servers" {
 
 # Create internet gateway and attach it to created VPC
 resource "aws_internet_gateway" "internet_gateway" {
-  vpc_id = "${aws_vpc.demo-vpc.id}"
+  vpc_id = aws_vpc.demo-vpc.id
 }
 
 # Create route table
 resource "aws_route_table" "routing_table" {
-  vpc_id = "${aws_vpc.demo-vpc.id}"
+  vpc_id = aws_vpc.demo-vpc.id
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = "${aws_internet_gateway.internet_gateway.id}"
+    gateway_id = aws_internet_gateway.internet_gateway.id
   }
   tags = {
     "Name" = "Paired to subnet AZ${length(var.vm_names)}"
@@ -38,15 +38,15 @@ resource "aws_route_table" "routing_table" {
 
 # Attach route table to subnet
 resource "aws_route_table_association" "table" {
-  route_table_id = "${aws_route_table.routing_table.id}"
-  subnet_id = "${aws_subnet.servers.id}"
+  route_table_id = aws_route_table.routing_table.id
+  subnet_id = aws_subnet.servers.id
 }
 
 # Create security group for web traffic
 resource "aws_security_group" "web-acl" {
   name = "web-acl"
   description = "Web access to instances"
-  vpc_id = "${aws_vpc.demo-vpc.id}"
+  vpc_id = aws_vpc.demo-vpc.id
   ingress {
     from_port = "80"
     to_port = "80"
@@ -71,7 +71,7 @@ resource "aws_security_group" "web-acl" {
 resource "aws_security_group" "ssh-acl" {
   name = "ssh-acl"
   description = "SSH Access to instances"
-  vpc_id = "${aws_vpc.demo-vpc.id}"
+  vpc_id = aws_vpc.demo-vpc.id
   ingress {
     from_port = "22"
     to_port = "22"
@@ -90,7 +90,7 @@ resource "aws_security_group" "ssh-acl" {
 resource "aws_security_group" "salt-acl" {
   name = "salt-acl"
   description = "Access for the salt master"
-  vpc_id = "${aws_vpc.demo-vpc.id}"
+  vpc_id = aws_vpc.demo-vpc.id
   ingress {
     from_port = "4505"
     to_port = "4505"
