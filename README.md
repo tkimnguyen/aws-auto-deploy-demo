@@ -39,7 +39,7 @@ or
     
 Once Plone has finished building, open a browser and visit [http://localhost:8080](http://localhost:8080) to view your new Plone installation.
 
-You should also be able to view the two new EC2 instances in your AWS EC2 console. One will be the salt master and the other is the demo server running the static website.
+You should also be able to view the two new EC2 instances in your AWS EC2 console. One will be the salt master and the other is the demo server running the Plone website.
 
 Other useful Terraform commands: 
 
